@@ -16,7 +16,7 @@ exports.config = {
     browserName: 'chrome'
   },
   directConnect: true,
-  baseUrl: 'http://localhost:4200/',
+  baseUrl: 'https://jsapps.cmxuwm6npz-hclameric3-d1-public.model-t.cc.commerce.ondemand.com/',
   framework: 'jasmine',
   jasmineNodeOpts: {
     showColors: true,

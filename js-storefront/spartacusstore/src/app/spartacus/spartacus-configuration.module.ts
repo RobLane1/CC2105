@@ -23,7 +23,7 @@ if (environment.occBaseUrl) {
     smartEdit: {
       storefrontPreviewRoute: 'cx-preview',
       //TODO: adjust origins as necessary
-      allowOrigin: 'localhost:9002, *.*.model-t.cc.commerce.ondemand.com:443',
+      allowOrigin: 'api.cmxuwm6npz-hclameric3-d1-public.model-t.cc.commerce.ondemand.com, *.*.model-t.cc.commerce.ondemand.com:443',
     },
     context: {
       urlParameters: ['baseSite', 'language', 'currency'],
