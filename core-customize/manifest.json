@@ -28,53 +28,35 @@
     ],
     "storefrontAddons": [
         {
-            "addon": "smarteditaddon",
-            "storefront": "yacceleratorstorefront",
+            "addon":[ 
+		"smarteditaddon",
+            	"textfieldconfiguratortemplateaddon",
+            	"assistedservicestorefront",
+        	"assistedservicepromotionaddon",
+            	"customerticketingaddon",
+         	"orderselfserviceaddon",
+         	"adaptivesearchsamplesaddon",
+         	"multicountrysampledataaddon",
+         	"pcmbackofficesamplesaddon",
+         	"personalizationaddon"
+         ],
+	"storefronts": [
+                "yacceleratorstorefront",
+                "yb2bacceleratorstorefront"
+            ],
             "template": "yacceleratorstorefront"
         },
-        {
-            "addon": "textfieldconfiguratortemplateaddon",
-            "storefront": "yacceleratorstorefront",
-            "template": "yacceleratorstorefront"
-        },
-        {
-            "addon": "assistedservicestorefront",
-            "storefront": "yacceleratorstorefront",
-            "template": "yacceleratorstorefront"
-        },
-        {
-            "addon": "assistedservicepromotionaddon",
-            "storefront": "yacceleratorstorefront",
-            "template": "yacceleratorstorefront"
-        },
-        {
-            "addon": "customerticketingaddon",
-            "storefront": "yacceleratorstorefront",
-            "template": "yacceleratorstorefront"
-        },
-        {
-            "addon": "orderselfserviceaddon",
-            "storefront": "yacceleratorstorefront",
-            "template": "yacceleratorstorefront"
-        },
-        {
-            "addon": "adaptivesearchsamplesaddon",
-            "storefront": "yacceleratorstorefront",
-            "template": "yacceleratorstorefront"
-        },
-        {
-            "addon": "multicountrysampledataaddon",
-            "storefront": "yacceleratorstorefront",
-            "template": "yacceleratorstorefront"
-        },
-        {
-            "addon": "pcmbackofficesamplesaddon",
-            "storefront": "yacceleratorstorefront",
-            "template": "yacceleratorstorefront"
-        },
-        {
-            "addon": "personalizationaddon",
-            "storefront": "yacceleratorstorefront",
+	{
+            "addons": [
+                "accountsummaryaddon",
+                "b2bacceleratoraddon",
+                "b2bpunchoutaddon",
+                "commerceorgaddon",
+                "commerceorgsamplesaddon",
+                "sapproductconfigb2baddon",
+                "secureportaladdon"
+            ],
+            "storefront": "yb2bacceleratorstorefront",
             "template": "yacceleratorstorefront"
         }
     ],
@@ -98,6 +80,10 @@
                 {
                   "name":"odata2webservices",
                   "contextPath":"/odata2webservices"
+               },
+               {
+                    "name": "oauth2",
+                    "contextPath": "/authorizationserver"
                }
             ]
         },
@@ -137,6 +123,10 @@
                 {
                     "name": "yacceleratorstorefront",
                     "contextPath": ""
+                },
+                {
+                    "name": "yb2bacceleratorstorefront",
+                    "contextPath": "/yb2bacceleratorstorefront"
                 },
                 {
                     "name": "acceleratorservices",
@@ -195,6 +185,10 @@
                 {
                     "name": "yacceleratorstorefront",
                     "contextPath": "/yacceleratorstorefront"
+                },
+		{
+                    "name": "yb2bacceleratorstorefront",
+                    "contextPath": "/yb2bacceleratorstorefront"
                 },
                 {
                     "name": "smartedit",
