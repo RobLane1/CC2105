@@ -28,7 +28,7 @@
     ],
     "storefrontAddons": [
         {
-            "addon":[ 
+            "addons":[ 
 		"smarteditaddon",
             	"textfieldconfiguratortemplateaddon",
             	"assistedservicestorefront",
