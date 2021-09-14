@@ -1,6 +1,7 @@
 <hybrisconfig xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:noNamespaceSchemaLocation='../bin/platform/resources/schemas/extensions.xsd'>
   <extensions>
     <path dir='${HYBRIS_BIN_DIR}' autoload='false' />
+    <extension name='yb2bacceleratorstorefront' />
     <extension name='adaptivesearch' />
     <extension name='adaptivesearchbackoffice' />
     <extension name='adaptivesearchfacades' />
@@ -19,8 +20,32 @@
     <extension name='assistedservicewebservices' />
     <extension name='assistedserviceyprofileaddon' />
     <extension name='assistedserviceyprofilefacades' />
+    <extension name='yaasyprofileconnect' />
+    <extension name='b2bacceleratoraddon' />
+    <extension name='b2bacceleratorfacades' />
+    <extension name='b2bacceleratorservices' />
+    <extension name='b2bocc' />
+    <extension name='b2bocctests' />
+    <extension name='b2bwebservicescommons' />
+    <extension name='commerceorgaddon' />
+    <extension name='commerceorgsamplesaddon' />
+    <extension name='powertoolsstore' />
+    <extension name='accountsummaryaddon' />
+    <extension name='b2bpunchout' />
+    <extension name='b2bpunchoutaddon' />
+    <extension name='savedorderforms' />
+    <extension name='savedorderformsocc' />
+    <extension name='secureportaladdon' />
+    <extension name='b2bapprovalprocess' />
+    <extension name='b2bapprovalprocessfacades' />
+    <extension name='b2bcommerce' />
+    <extension name='b2bcommercebackoffice' />
+    <extension name='b2bcommercefacades' />
+    <extension name='apparelstore' />
     <extension name='electronicsstore' />
+    <extension name='captchaaddon' />
     <extension name='multicountrysampledataaddon' />
+    <extension name='wishlist' />
     <extension name='pcmbackofficesamplesaddon' />
     <extension name='classificationgroupsservices' />
     <extension name='patchesbackoffice' />
@@ -31,8 +56,12 @@
     <extension name='platformbackoffice' />
     <extension name='ybackoffice' />
     <!--<extension name='yacceleratorbackoffice' />-->
+    <extension name='yacceleratorbackoffice' />
     <extension name='yacceleratorcore' />
+    <extension name='yacceleratorfacades' />
+    <extension name='yacceleratorinitialdata' />
     <extension name='yacceleratorstorefront' />
+    <extension name='yaddon' />
     <extension name='basecommerce' />
     <extension name='basecommercebackoffice' />
     <extension name='payment' />
@@ -96,6 +125,8 @@
     <extension name='notificationocc' />
     <extension name='notificationservices' />
     <extension name='npmancillary' />
+    <extension name='b2bordermanagementfacades' />
+    <extension name='b2bordermanagementwebservices' />
     <extension name='ordermanagementaddon' />
     <extension name='ordermanagementfacades' />
     <extension name='ordermanagementwebservices' />
@@ -145,9 +176,15 @@
     <extension name='ruleengineservices' />
     <extension name='kymaintegrationbackoffice' />
     <extension name='kymaintegrationservices' />
+    <extension name='backofficesolrsearch' />
     <extension name='solrfacetsearch' />
     <extension name='solrfacetsearchbackoffice' />
     <extension name='solrserver' />
+    <extension name='backofficesearchservices' />
+    <extension name='searchbackoffice' />
+    <extension name='searchprovidercssearchbackoffice' />
+    <extension name='searchprovidercssearchservices' />
+    <extension name='searchservices' />
     <extension name='selectivecartfacades' />
     <extension name='selectivecartservices' />
     <extension name='selectivecartsplitlistaddon' />
@@ -159,6 +196,14 @@
     <extension name='stocknotificationaddon' />
     <extension name='stocknotificationfacades' />
     <extension name='stocknotificationservices' />
+    <extension name='subscriptionbundlecockpits' />
+    <extension name='subscriptionbundlebackoffice' />
+    <extension name='subscriptionbundlefacades' />
+    <extension name='subscriptionbundleservices' />
+    <extension name='subscriptioncockpits' />
+    <extension name='subscriptionbackoffice' />
+    <extension name='subscriptionfacades' />
+    <extension name='subscriptionservices' />
     <extension name='textfieldconfiguratortemplateaddon' />
     <extension name='textfieldconfiguratortemplatebackoffice' />
     <extension name='textfieldconfiguratortemplatefacades' />
@@ -175,6 +220,10 @@
     <extension name='cmsfacades' />
     <extension name='cmsocc' />
     <extension name='cmswebservices' />
+    <extension name='cmscockpit' />
+    <extension name='previewwebservices' />
+    <extension name='permissionsfacades' />
+    <extension name='permissionswebservices' />
     <extension name='webservicescommons' />
     <extension name='ywebservices' />
 
