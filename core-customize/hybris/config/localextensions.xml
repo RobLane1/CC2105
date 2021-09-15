@@ -226,6 +226,7 @@
     <extension name='permissionswebservices' />
     <extension name='webservicescommons' />
     <extension name='ywebservices' />
+	<extension name= 'sapproductconfigb2baddon' />
 
 <!-- Sample Extensions -->
     <extension name='spartacussampledata' />
