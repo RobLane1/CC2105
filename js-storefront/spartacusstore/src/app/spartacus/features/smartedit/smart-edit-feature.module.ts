@@ -1,27 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CmsConfig, provideConfig } from "@spartacus/core";
-import { SmartEditRootModule, SMART_EDIT_FEATURE } from "@spartacus/smartedit/root";
+import { SmartEditConfig, SmartEditRootModule, SMART_EDIT_FEATURE } from "@spartacus/smartedit/root";
 
 @NgModule({
   declarations: [],
   imports: [
     SmartEditRootModule
   ],
-  providers: [provideConfig({
-    featureModules: {
-      smartEdit: {
-        module: () =>
-          import('@spartacus/smartedit').then((m) => m.SmartEditModule),
-      },
-    }
-  }),
-  provideConfig(<CmsConfig>{
+  providers: [provideConfig(<CmsConfig>{
     featureModules: {
       [SMART_EDIT_FEATURE]: {
         module: () =>
           import('@spartacus/smartedit').then((m) => m.SmartEditModule),
       },
     }
+  }),
+  provideConfig(<SmartEditConfig>{
+    smartEdit: {
+      storefrontPreviewRoute: 'cx-preview',
+      allowOrigin: 'api.cmxuwm6npz-hclameric3-d1-public.model-t.cc.commerce.ondemand.com, *.*.model-t.cc.commerce.ondemand.com:443',
+    },
   })
   ]
 })
