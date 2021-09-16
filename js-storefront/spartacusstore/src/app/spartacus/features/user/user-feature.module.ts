@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CmsConfig, I18nConfig, provideConfig } from "@spartacus/core";
+import { UserAccountModule } from "@spartacus/user/account";
 import { userAccountTranslationChunksConfig, userAccountTranslations } from "@spartacus/user/account/assets";
 import { UserAccountRootModule, USER_ACCOUNT_FEATURE } from "@spartacus/user/account/root";
 import { userProfileTranslationChunksConfig, userProfileTranslations } from "@spartacus/user/profile/assets";
@@ -9,37 +10,10 @@ import { UserProfileRootModule, USER_PROFILE_FEATURE } from "@spartacus/user/pro
   declarations: [],
   imports: [
     UserAccountRootModule,
-    UserProfileRootModule
+    UserProfileRootModule,
+    UserAccountModule
   ],
-  providers: [provideConfig({
-    featureModules: {
-      userAccount: {
-        module: () =>
-          import('@spartacus/user/account').then((m) => m.UserAccountModule),
-      },
-    }
-  }),
-  provideConfig({
-    i18n: {
-      resources: userAccountTranslations,
-      chunks: userAccountTranslationChunksConfig,
-    },
-  }),
-  provideConfig({
-    featureModules: {
-      userProfile: {
-        module: () =>
-          import('@spartacus/user/profile').then((m) => m.UserProfileModule),
-      },
-    }
-  }),
-  provideConfig({
-    i18n: {
-      resources: userProfileTranslations,
-      chunks: userProfileTranslationChunksConfig,
-    },
-  }),
-  provideConfig(<CmsConfig>{
+  providers: [provideConfig(<CmsConfig>{
     featureModules: {
       [USER_ACCOUNT_FEATURE]: {
         module: () =>

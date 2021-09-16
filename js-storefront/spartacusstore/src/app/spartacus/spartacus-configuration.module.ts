@@ -1,44 +1,19 @@
 import { NgModule } from '@angular/core';
 import { translationChunksConfig, translations } from "@spartacus/assets";
-import { FeaturesConfig, I18nConfig, OccConfig, provideConfig, SiteContextConfig } from '@spartacus/core';
+import { FeaturesConfig, I18nConfig, OccConfig, provideConfig, SiteContextConfig } from "@spartacus/core";
+import { defaultB2bCheckoutConfig, defaultB2bOccConfig } from "@spartacus/setup";
 import { defaultCmsContentProviders, layoutConfig, mediaConfig } from "@spartacus/storefront";
-import { environment } from 'src/environments/environment';
-
-const occConfig: OccConfig = { backend: { occ: {} } };
-// only provide the `occ.baseUrl` key if it is explicitly configured, otherwise the value of
-// <meta name="occ-backend-base-url" > is ignored.
-// This in turn breaks the deployment in CCv2.
-// https://github.com/SAP/spartacus/issues/5886
-occConfig.backend.occ.prefix = '/occ/v2/'
-if (environment.occBaseUrl) {
-  occConfig.backend.occ.baseUrl = environment.occBaseUrl;
-}
 
 @NgModule({
   declarations: [],
   imports: [
   ],
-  providers: [provideConfig(layoutConfig), provideConfig(mediaConfig), ...defaultCmsContentProviders, provideConfig({
-    backend: occConfig.backend,
-    smartEdit: {
-      storefrontPreviewRoute: 'cx-preview',
-      //TODO: adjust origins as necessary
-      allowOrigin: 'api.cmxuwm6npz-hclameric3-d1-public.model-t.cc.commerce.ondemand.com, *.*.model-t.cc.commerce.ondemand.com:443',
+  providers: [provideConfig(layoutConfig), provideConfig(mediaConfig), ...defaultCmsContentProviders, provideConfig(<OccConfig>{
+    backend: {
+      occ: {
+        baseUrl: 'https://api.cmxuwm6npz-hclameric3-d1-public.model-t.cc.commerce.ondemand.com',
+      }
     },
-    context: {
-      urlParameters: ['baseSite', 'language', 'currency'],
-      baseSite: ['electronics-spa','powertools-spa'],
-      currency: ['USD'],
-      language: ['en'],
-    },
-    i18n: {
-      resources: translations,
-      chunks: translationChunksConfig,
-      fallbackLang: 'en'
-    },
-    features: {
-      level: '3.2'
-    }
   }), provideConfig(<SiteContextConfig>{
     context: {
       currency: ['USD'],
@@ -52,8 +27,8 @@ if (environment.occBaseUrl) {
     },
   }), provideConfig(<FeaturesConfig>{
     features: {
-      level: '3.4'
+      level: '4.1'
     }
-  })]
+  }), provideConfig(defaultB2bOccConfig), provideConfig(defaultB2bCheckoutConfig)]
 })
 export class SpartacusConfigurationModule { }
