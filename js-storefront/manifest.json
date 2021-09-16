@@ -11,6 +11,5 @@
                 "webroot": "dist/spartacusstore/browser/"
             }
         }
-    ],
-    "nodeVersion": "12"
+    ]
 }
