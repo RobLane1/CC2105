@@ -13,7 +13,6 @@ import { OrganizationOrderApprovalFeatureModule } from './features/organization/
 import { DigitalPaymentsFeatureModule } from './features/digital-payments/digital-payments-feature.module';
 import { CheckoutFeatureModule } from './features/checkout/checkout-feature.module';
 import { CartSavedCartFeatureModule } from './features/cart/cart-saved-cart-feature.module';
-import { CartQuickOrderFeatureModule } from './features/cart/cart-quick-order-feature.module';
 import { AsmFeatureModule } from './features/asm/asm-feature.module';
 
 @NgModule({
@@ -102,7 +101,6 @@ import { AsmFeatureModule } from './features/asm/asm-feature.module';
     DigitalPaymentsFeatureModule,
     CheckoutFeatureModule,
     CartSavedCartFeatureModule,
-    CartQuickOrderFeatureModule,
     AsmFeatureModule,
   ]
 })
