@@ -36,7 +36,6 @@
     "@spartacus/cart": "^4.0.1",
     "@spartacus/checkout": "4.0.1",
     "@spartacus/core": "^4.0.1",
-    "@spartacus/digital-payments": "~4.1.0",
     "@spartacus/organization": "~4.1.0",
     "@spartacus/product": "^4.0.1",
     "@spartacus/product-configurator": "~4.1.0",
