@@ -10,7 +10,6 @@ import { ProductBulkPricingFeatureModule } from './features/product/product-bulk
 import { ProductVariantsFeatureModule } from './features/product/product-variants-feature.module';
 import { OrganizationAdministrationFeatureModule } from './features/organization/organization-administration-feature.module';
 import { OrganizationOrderApprovalFeatureModule } from './features/organization/organization-order-approval-feature.module';
-import { DigitalPaymentsFeatureModule } from './features/digital-payments/digital-payments-feature.module';
 import { CheckoutFeatureModule } from './features/checkout/checkout-feature.module';
 import { CartSavedCartFeatureModule } from './features/cart/cart-saved-cart-feature.module';
 import { AsmFeatureModule } from './features/asm/asm-feature.module';
@@ -98,7 +97,6 @@ import { AsmFeatureModule } from './features/asm/asm-feature.module';
     ProductVariantsFeatureModule,
     OrganizationAdministrationFeatureModule,
     OrganizationOrderApprovalFeatureModule,
-    DigitalPaymentsFeatureModule,
     CheckoutFeatureModule,
     CartSavedCartFeatureModule,
     AsmFeatureModule,
