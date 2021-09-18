@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { translationChunksConfig, translations } from "@spartacus/assets";
 import { FeaturesConfig, I18nConfig, OccConfig, provideConfig, SiteContextConfig } from '@spartacus/core';
 import { defaultCmsContentProviders, layoutConfig, mediaConfig } from "@spartacus/storefront";
+import { defaultB2bCheckoutConfig, defaultB2bOccConfig } from "@spartacus/setup";
 import { environment } from 'src/environments/environment';
 
 const occConfig: OccConfig = { backend: { occ: {} } };
@@ -27,7 +28,7 @@ if (environment.occBaseUrl) {
     },
     context: {
       urlParameters: ['baseSite', 'language', 'currency'],
-      baseSite: ['electronics-spa','powertools-spa'],
+      baseSite: ['powertools-spa'],
       currency: ['USD'],
       language: ['en'],
     },
@@ -54,6 +55,6 @@ if (environment.occBaseUrl) {
     features: {
       level: '3.4'
     }
-  })]
+  }), provideConfig(defaultB2bOccConfig), provideConfig(defaultB2bCheckoutConfig)]
 })
 export class SpartacusConfigurationModule { }
