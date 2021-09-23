@@ -237,6 +237,10 @@
 	<requires-extension name="consignmenttrackingservices"/>
 	<extension name='cms2lib' />
 	<extension name='acceleratorwebservicesaddon' />
+	
+	<extension name='ycommercewebservices' />
+	<extension name='oauth2' />
+	
 	<!-- SAP Cloud integration extensions-->
 	<extension name='sapcoreaddon' />
     <extension name='sapcorebol' />
