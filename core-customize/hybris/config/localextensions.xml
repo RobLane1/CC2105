@@ -236,10 +236,10 @@
 	<extension name="consignmenttrackingservices"/>
 	<extension name='cms2lib' />
 	<extension name='acceleratorwebservicesaddon' />
-	
+	<extension name="c4ccustomer" />
 	<extension name='ycommercewebservices' />
 	<extension name='oauth2' />
-	
+	<extension name="customerticketingc4cb2bintegration"/>  
 	<!-- SAP Cloud integration extensions-->
 	<extension name='sapcoreaddon' />
     <extension name='sapcorebol' />
