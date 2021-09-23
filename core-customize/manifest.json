@@ -1,8 +1,15 @@
 {
     "commerceSuiteVersion": "2105",
-    "useCloudExtensionPack": true,
+    "enableImageProcessingService": true,
+    "extensionPacks" : [
+	{
+		"name" : "hybris-commerce-integrations",
+		"version" : "2102.0"
+	}
+     ],
     "extensions": [
-        
+        "cloudmediaconversion",  
+        "mediaconversionbackoffice"
     ],
     "useConfig": {
         "properties": [
