@@ -43,8 +43,7 @@
          	"orderselfserviceaddon",
          	"adaptivesearchsamplesaddon",
          	"multicountrysampledataaddon",
-         	"pcmbackofficesamplesaddon",
-         	"personalizationaddon"
+         	"pcmbackofficesamplesaddon"
          ],
 	"storefronts": [
                 "yacceleratorstorefront",
