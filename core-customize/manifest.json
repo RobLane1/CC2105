@@ -38,11 +38,8 @@
 		"smarteditaddon",
             	"textfieldconfiguratortemplateaddon",
             	"assistedservicestorefront",
-        	"assistedservicepromotionaddon",
          	"orderselfserviceaddon",
-         	"adaptivesearchsamplesaddon",
-         	"multicountrysampledataaddon",
-         	"pcmbackofficesamplesaddon"
+         	"adaptivesearchsamplesaddon"
          ],
 	"storefronts": [
                 "yacceleratorstorefront",
@@ -59,12 +56,9 @@
 	    	"consignmenttrackingaddon",
 	    	"mockcarrieraddon",
 	    	"ysapordermgmtb2baddon",
-                "accountsummaryaddon",
                 "b2bacceleratoraddon",
-                "b2bpunchoutaddon",
                 "commerceorgaddon",
                 "commerceorgsamplesaddon",
-                "sapproductconfigb2baddon",
                 "secureportaladdon"
             ],
             "storefront": "yb2bacceleratorstorefront",
