@@ -227,14 +227,14 @@
     <extension name='permissionswebservices' />
     <extension name='webservicescommons' />
     <extension name='ywebservices' />
-	<extension name= 'sapproductconfigb2baddon' />
+	<extension name='sapproductconfigb2baddon' />
 
 	<extension name="consignmenttrackingaddon" />
 	<extension name="consignmenttrackingbackoffice" />
-	<extension name="c4ccustomer" />
+
 	<extension name='b2boccaddon' />
 	<extension name='customerticketingc4cb2bintegration' />
-	<requires-extension name="consignmenttrackingservices"/>
+	<extension name="consignmenttrackingservices"/>
 	<extension name='cms2lib' />
 	<extension name='acceleratorwebservicesaddon' />
 	
