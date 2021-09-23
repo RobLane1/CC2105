@@ -1,6 +1,7 @@
 {
     "commerceSuiteVersion": "2105",
     "enableImageProcessingService": true,
+    "useCloudExtensionPack": true,
     "extensions": [
         "cloudmediaconversion",  
         "mediaconversionbackoffice"
