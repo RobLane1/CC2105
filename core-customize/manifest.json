@@ -48,6 +48,13 @@
         },
 	{
             "addons": [
+	    	"acceleratorwebservicesaddon",
+	    	"sapcoreaddon",
+	    	"sapphirecustomerticketaddon",
+	    	"sapphiredemoaddon",
+	    	"consignmenttrackingaddon",
+	    	"mockcarrieraddon",
+	    	"ysapordermgmtb2baddon",
                 "accountsummaryaddon",
                 "b2bacceleratoraddon",
                 "b2bpunchoutaddon",

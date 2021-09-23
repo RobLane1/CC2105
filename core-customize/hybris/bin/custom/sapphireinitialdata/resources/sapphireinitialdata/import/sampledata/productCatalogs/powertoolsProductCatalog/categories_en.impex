@@ -1,0 +1,115 @@
+# -----------------------------------------------------------------------
+# [y] hybris Platform
+#
+# Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+#
+# This software is the confidential and proprietary information of SAP
+# ("Confidential Information"). You shall not disclose such Confidential
+# Information and shall use it only in accordance with the terms of the
+# license agreement you entered into with SAP.
+# -----------------------------------------------------------------------
+# ImpEx for Importing Categories into Powertools Store 
+
+
+# Macros / Replacement Parameter definitions
+$productCatalog=powertoolsProductCatalog
+$productCatalogName=Powertools Product Catalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+
+$lang=en
+
+UPDATE Category;$catalogVersion;code[unique=true];name[lang=$lang];description[lang=$lang]
+;;1;Open-Catalogue;
+;;2021;Shop by Equipment;
+;;2018;Shop by GBL-75;
+;;2019;Shop by CS12 GSTE98-800;
+;;2020;Shop by YTOOL;
+;;3000;Shop By Category;
+;;3010;Bearing;
+;;3011;Deep Groove;
+;;3012;Counter;
+;;3013;Sliding;
+;;3020;Cable;
+;;3021;PhotoCell;
+;;3022;Switch;
+;;3030;Fitting Elbow;
+;;3031;Connector;
+;;3032;Union;
+;;3033;Rotatable;
+;;3034;Screwed;
+;;3040;Washer;
+;;3041;CSNK;
+;;3042;Flat;
+;;3043;Helical;
+;;3050;Screw;
+;;3051;CSNK Socket;
+;;3052;Hex Head;
+;;3053;Grub Socket;
+;;3060;Cover;
+;;3061;Chain Wheel;
+;;3062;Protective
+;;4000;Philips Lighting;
+;;4001;Indoor Luminaires ;
+;;4002;Outdoor Luminaires ;
+;;4003;LED Lamps and Tubes;
+;;4004;Conventional Lamps and Tubes;
+;;4005;Recessed;
+;;4006;Suspended;
+;;4007;Projectors
+;;4008;Waterproof Luminaires
+;;4009;FloodLight
+;;4010; LED Tubes
+;;4011; LED Spots
+;;4012; High Intensity Discharge Lamps
+;;4013; Sports FloodLight
+;;4014;Urban Road Luminaires
+;;4015;Tunnel Underpass Lighting
+
+#Navistar
+;;3063;Engines
+;;3064;Belts
+;;3065;Engine Overhaul Kits
+;;3066;Fan Drives
+;;3067;Fuel Injectors
+;;3068;Radiators
+;;3069;Surge Tanks
+;;3070;Water Pumps
+
+UPDATE Category;$catalogVersion;code[unique=true];name[lang=$lang];description[lang=$lang]
+ ;;demobrand_2017_1;General;General
+ ;;demobrand_2017_2;Service;Service;
+ ;;demobrand_2017_3;Line;Line;
+ ;;demobrand_2017_4;Premium;Premium;
+ ;;demobrand_2017_5;High Output;High Output;
+ ;;demobrand_2017_6;UPS;UPS;
+ ;;demobrand_2017_7;Batteries;Batteries;
+ ;;demobrand_2017_8;Cable Belts;Cable Belts;
+ ;;demobrand_2017_9;General Belts;General Belts;
+ ;;demobrand_2017_10;Carburettor;Carburettor;
+ ;;demobrand_2017_11;Fuel Filter;Fuel Filter;
+ ;;demobrand_2017_12;Fuel Service;Fuel Service;
+ ;;demobrand_2017_13;Small Arm;Small Arm
+ ;;demobrand_2017_14;Medium Arm;Medium Arm;
+ ;;demobrand_2017_15;Handle;Handle;
+ ;;demobrand_2017_16;Washer;Washer;
+ ;;demobrand_2017_17;Frame;Frame;
+ ;;demobrand_2017_18;Foot;Foot;
+ ;;demobrand_2017_19;Cover Motor;Cover Motor;
+ ;;demobrand_2017_20;Ball Tap;Ball Tap;
+ ;;demobrand_2017_21;Air Mover;Air Mover;
+ ;;demobrand_2017_22;Connector;Connector;
+ ;;demobrand_2017_23;Cover;Cover;
+ ;;demobrand_2017_24;Bolt Long;Bolt Long;
+ ;;4000;Philips Lighting;Philips Lighting;
+ ;;4001;Indoor Luminaires ;Indoor Luminaires ;
+ ;;4002;Outdoor Luminaires ;Outdoor Luminaires ;
+ ;;4003;LED Lamps and Tubes;LED Lamps and Tubes;
+ ;;4004;Conventional Lamps and Tubes;Conventional Lamps and Tubes;
+ ;;4005;Recessed;Recessed;
+ ;;4006;Suspended;Suspended;
+ ;;4007;Projectors;Projectors;
+ ;;4008;Waterproof Luminaires;
+ ;;4009;FloodLight;FloodLight;
+ ;;4010; LED Tubes;LED Tubes;
+ ;;4011; LED Spots; LED Spots;
+ 

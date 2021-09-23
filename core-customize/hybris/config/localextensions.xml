@@ -77,12 +77,13 @@
     <extension name='configurablebundlebackoffice' />
     <extension name='configurablebundlefacades' />
     <extension name='configurablebundleservices' />
-    <!--<extension name='acceleratorbackoffice' />
+    <extension name='acceleratorcms' />
+	<!--<extension name='acceleratorbackoffice' />
     <extension name='acceleratorcms' />
     <extension name='acceleratorfacades' />
     <extension name='acceleratorocc' />
-    <extension name='acceleratorservices' />
-    <extension name='acceleratorstorefrontcommons' />-->
+    <extension name='acceleratorservices' />-->
+    <extension name='acceleratorstorefrontcommons' />
     <extension name='acceleratorocc' />
     <extension name='addonsupport' />
     <extension name='couponbackoffice' />
@@ -136,7 +137,7 @@
     <extension name='warehousingfacades' />
     <extension name='warehousingwebservices' />
     <extension name='yacceleratorordermanagement' />
-    <extension name='personalizationcms' />
+    <!--<extension name='personalizationcms' />
     <extension name='personalizationcmsbackoffice' />
     <extension name='personalizationcmsweb' />
     <extension name='personalizationfacades' />
@@ -160,7 +161,7 @@
     <extension name='personalizationsearchbackoffice' />
     <extension name='personalizationsearchsamplesaddon' />
     <extension name='personalizationsearchsmartedit' />
-    <extension name='personalizationsearchweb' />
+    <extension name='personalizationsearchweb' />-->
     <extension name='adminapi' />
     <extension name='auditreportservices' />
     <extension name='deltadetection' />
@@ -210,12 +211,12 @@
     <extension name='textfieldconfiguratortemplateocc' />
     <extension name='textfieldconfiguratortemplateocctests' />
     <extension name='textfieldconfiguratortemplateservices' />
-    <extension name='timedaccesspromotionengineaddon' />
+    <!--<extension name='timedaccesspromotionengineaddon' />
     <extension name='timedaccesspromotionenginebackoffice' />
     <extension name='timedaccesspromotionenginefacades' />
     <extension name='timedaccesspromotionengineocc' />
     <extension name='timedaccesspromotionenginesamplesaddon' />
-    <extension name='timedaccesspromotionengineservices' />
+    <extension name='timedaccesspromotionengineservices' />-->
     <extension name='cmsbackoffice' />
     <extension name='cmsfacades' />
     <extension name='cmsocc' />
@@ -228,9 +229,48 @@
     <extension name='ywebservices' />
 	<extension name= 'sapproductconfigb2baddon' />
 
+	<extension name="consignmenttrackingaddon" />
+	<extension name="consignmenttrackingbackoffice" />
+	<extension name="c4ccustomer" />
+	<extension name='b2boccaddon' />
+	<extension name='customerticketingc4cb2bintegration' />
+	<requires-extension name="consignmenttrackingservices"/>
+	<extension name='cms2lib' />
+	<extension name='acceleratorwebservicesaddon' />
+	<!-- SAP Cloud integration extensions-->
+	<extension name='sapcoreaddon' />
+    <extension name='sapcorebol' />
+    <extension name='sapcoreconfigurationbackoffice' />
+    <extension name='sapmodel' />
+    <extension name='sapmodelbackoffice' />
+    <extension name='sapcustomerb2b' />
+    <extension name='sapcustomerb2c' />
+    <extension name='sapcustomerb2bbackoffice' />
+    <extension name='b2bsappricing' />
+    <extension name='sappricingbackoffice' />
+    <extension name='saporderexchange' />
+	<extension name='saporderexchangeb2b' />
+    <extension name='saporderexchangebackoffice' />
+    <extension name='sapcommonbol' />
+    <extension name='sapordermgmtb2bfacades' />
+    <extension name='sapordermgmtbol' />
+    <extension name='ysapordermgmtb2baddon' />
+    <extension name='sapordermgmtbackoffice' />
+    <extension name='sapcoretest' />
+
 <!-- Sample Extensions -->
     <extension name='spartacussampledata' />
 
+<!-- below settings are for book an appointment -->	
+	<extension name='sapphiredemocore' />
+	<extension name='sapphirefacade' />
+	<extension name='sapphiresaporderfulfillment' />
+	<extension name='sapphirecustomerticketaddon' />                     	
+	<extension name='sapphiredemoaddon' />
+	<extension name='sapphireinitialdata' />
+	<extension name='demob2boccaddon' />
+	<extension name='democustomerticketingc4cb2bintegration' />	
+	<extension name='mockcarrieraddon' />
 
 <!-- If you want to test Cloud Hot Folders locally download the extensions from https://launchpad.support.sap.com/#/notes/2817992 and uncomment the following -->
     <!--<extension name='azurecloudhotfolder' />

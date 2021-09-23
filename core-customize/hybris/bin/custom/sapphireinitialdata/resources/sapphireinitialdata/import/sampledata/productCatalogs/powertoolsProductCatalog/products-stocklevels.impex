@@ -1,0 +1,509 @@
+# -----------------------------------------------------------------------
+# [y] hybris Platform
+#
+# Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+#
+# This software is the confidential and proprietary information of SAP
+# ("Confidential Information"). You shall not disclose such Confidential
+# Information and shall use it only in accordance with the terms of the
+# license agreement you entered into with SAP.
+# -----------------------------------------------------------------------
+# ImpEx for Importing Products stock levels into Powertools Store
+
+# Macros / Replacement Parameter definitions
+$productCatalog=powertoolsProductCatalog
+$productCatalogName=Powertools Product Catalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$vendor=powertools
+
+INSERT_UPDATE Warehouse;code[unique=true];name[lang=en]
+;pw_warehouse_s;Powertools Warehouse South
+;pw_warehouse_e;Powertools Warehouse East
+;pw_warehouse_w;Powertools Warehouse West
+;pw_warehouse_n;Powertools Warehouse North
+
+
+# stock for products in shop by equipment category
+INSERT_UPDATE StockLevel;productCode[unique=true];warehouse(code)[unique=true,default=default];available;inStockStatus(code);maxPreOrder[default=1];maxStockLevelHistoryCount[default=-1];overSelling[default=0];preOrder[default=0];reserved[default=0]
+;P103			   ;1710;100;notSpecified
+;FLTWK1876205;1710;100;notSpecified
+;FLT021090000;1710;100;notSpecified
+;FLT1700594;1710;100;notSpecified
+;000000000000000031;1710;100;notSpecified
+;000000000000000036;1710;100;notSpecified
+;000000000000000037;1710;100;notSpecified
+;000000000000000038;1710;100;notSpecified
+;000000000000000039;1710;100;notSpecified
+;000000000000000040;1710;100;notSpecified
+;000000000000000041;1710;100;notSpecified
+;000000000000000042;1710;100;notSpecified
+;000000000000000043;1710;100;notSpecified
+;000000000000000044;1710;100;notSpecified
+;000000000000000045;1710;100;notSpecified
+;000000000000000046;1710;100;notSpecified
+;000000000000000047;1710;100;notSpecified
+;000000000000000048;1710;100;notSpecified
+;000000000000000049;1710;100;notSpecified
+;000000000000000050;1710;100;notSpecified
+;000000000000000051;1710;100;notSpecified
+;000000000000000052;1710;100;notSpecified
+;000000000000000053;1710;100;notSpecified
+;000000000000000054;1710;100;notSpecified
+;000000000000000055;1710;100;notSpecified
+;000000000000000056;1710;100;notSpecified
+;000000000000000057;1710;100;notSpecified
+;000000000000000058;1710;100;notSpecified
+;000000000000000059;1710;100;notSpecified
+;000000000000000060;1710;100;notSpecified
+;000000000000000061;1710;100;notSpecified
+;000000000000000062;1710;100;notSpecified
+;000000000000000063;1710;100;notSpecified
+;000000000000000064;1710;100;notSpecified
+;000000000000000065;1710;100;notSpecified
+;000000000000000066;1710;100;notSpecified
+;000000000000000067;1710;100;notSpecified
+;000000000000000068;1710;100;notSpecified
+;000000000000000069;1710;100;notSpecified
+;000000000000000070;1710;100;notSpecified
+;000000000000000071;1710;100;notSpecified
+;000000000000000072;1710;100;notSpecified
+;000000000000000073;1710;100;notSpecified
+;000000000000000074;1710;100;notSpecified
+;000000000000000075;1710;100;notSpecified
+;000000000000000076;1710;100;notSpecified
+;000000000000000092;1710;100;forceInStock
+;000000000000000093;1710;100;forceInStock
+;000000000000000094;1710;100;forceInStock
+;000000000000000095;1710;100;forceInStock
+;000000000000000096;1710;100;forceInStock
+
+
+INSERT_UPDATE Product;code[unique=true];stockLevels(productCode,warehouse(code));vendors(code)[default=powertools];$catalogVersion
+;P103;P103:1710
+;FLTWK1876205;FLTWK1876205:1710
+;FLT021090000;FLT021090000:1710
+;FLT1700594;FLT1700594:1710
+;000000000000000031;000000000000000031:1710
+;000000000000000036;000000000000000036:1710
+;000000000000000037;000000000000000037:1710
+;000000000000000038;000000000000000038:1710
+;000000000000000039;000000000000000039:1710
+;000000000000000040;000000000000000040:1710
+;000000000000000041;000000000000000041:1710
+;000000000000000042;000000000000000042:1710
+;000000000000000043;000000000000000043:1710
+;000000000000000044;000000000000000044:1710
+;000000000000000045;000000000000000045:1710
+;000000000000000046;000000000000000046:1710
+;000000000000000047;000000000000000047:1710
+;000000000000000048;000000000000000048:1710
+;000000000000000049;000000000000000049:1710
+;000000000000000050;000000000000000050:1710
+;000000000000000051;000000000000000051:1710
+;000000000000000052;000000000000000052:1710
+;000000000000000053;000000000000000053:1710
+;000000000000000054;000000000000000054:1710
+;000000000000000055;000000000000000055:1710
+;000000000000000056;000000000000000056:1710
+;000000000000000057;000000000000000057:1710
+;000000000000000058;000000000000000058:1710
+;000000000000000059;000000000000000059:1710
+;000000000000000060;000000000000000060:1710
+;000000000000000061;000000000000000061:1710
+;000000000000000062;000000000000000062:1710
+;000000000000000063;000000000000000063:1710
+;000000000000000064;000000000000000064:1710
+;000000000000000065;000000000000000065:1710
+;000000000000000066;000000000000000066:1710
+;000000000000000067;000000000000000067:1710
+;000000000000000068;000000000000000068:1710
+;000000000000000069;000000000000000069:1710
+;000000000000000070;000000000000000070:1710
+;000000000000000071;000000000000000071:1710
+;000000000000000072;000000000000000072:1710
+;000000000000000073;000000000000000073:1710
+;000000000000000074;000000000000000074:1710
+;000000000000000075;000000000000000075:1710
+;000000000000000076;000000000000000076:1710
+ 
+#Stock for product in shop by category
+INSERT_UPDATE StockLevel;productCode[unique=true];warehouse(code)[unique=true,default=default];available;inStockStatus(code);maxPreOrder[default=1];maxStockLevelHistoryCount[default=-1];overSelling[default=0];preOrder[default=0];reserved[default=0]
+ ;Y7301558;pw_warehouse_s;100;notSpecified 
+ ;Y7301559;pw_warehouse_s;100;notSpecified 
+ ;Y7301560;pw_warehouse_s;100;notSpecified 
+ ;Y7301561;pw_warehouse_s;100;notSpecified 
+ ;Y7301562;pw_warehouse_s;100;notSpecified 
+ ;Y7301563;pw_warehouse_s;100;notSpecified 
+ ;Y7301564;pw_warehouse_s;100;notSpecified 
+ ;Y7301565;pw_warehouse_s;100;notSpecified 
+ ;Y7301566;pw_warehouse_s;100;notSpecified 
+ ;Y5003115;pw_warehouse_s;100;notSpecified 
+ ;Y5003116;pw_warehouse_s;100;notSpecified 
+ ;Y7326252;pw_warehouse_s;100;notSpecified 
+ ;Y7326917;pw_warehouse_s;100;notSpecified 
+ ;Y7326918;pw_warehouse_s;100;notSpecified 
+ ;Y7326912;pw_warehouse_s;100;notSpecified 
+ ;Y7326919;pw_warehouse_s;100;notSpecified 
+ ;Y7326920;pw_warehouse_s;100;notSpecified 
+ ;Y7326921;pw_warehouse_s;100;notSpecified 
+ ;Y7326922;pw_warehouse_s;100;notSpecified 
+ ;Y7326923;pw_warehouse_s;100;notSpecified 
+ ;Y7326924;pw_warehouse_s;100;notSpecified 
+ ;Y7326925;pw_warehouse_s;100;notSpecified 
+ ;Y7326926;pw_warehouse_s;100;notSpecified 
+ ;Y7326927;pw_warehouse_s;100;notSpecified 
+ ;Y7326928;pw_warehouse_s;100;notSpecified 
+ ;Y7326929;pw_warehouse_s;100;notSpecified 
+ ;Y7326914;pw_warehouse_s;100;notSpecified 
+ ;Y7326915;pw_warehouse_s;100;notSpecified 
+ ;Y7326930;pw_warehouse_s;100;notSpecified 
+ ;Y7326931;pw_warehouse_s;100;notSpecified 
+ ;Y7326932;pw_warehouse_s;100;notSpecified 
+ ;Y7326933;pw_warehouse_s;100;notSpecified 
+ ;Y7326934;pw_warehouse_s;100;notSpecified 
+ ;Y7326935;pw_warehouse_s;100;notSpecified 
+ ;Y7326936;pw_warehouse_s;100;notSpecified 
+ ;Y7326937;pw_warehouse_s;100;notSpecified 
+ ;Y7326938;pw_warehouse_s;100;notSpecified 
+ ;Y7326939;pw_warehouse_s;100;notSpecified 
+ ;Y7326940;pw_warehouse_s;100;notSpecified 
+ ;Y7326062;pw_warehouse_s;100;notSpecified 
+ ;Y7326063;pw_warehouse_s;100;notSpecified 
+ ;Y7326870;pw_warehouse_s;100;notSpecified 
+ ;Y7326880;pw_warehouse_s;100;notSpecified 
+ ;Y7326881;pw_warehouse_s;100;notSpecified 
+ ;Y7326882;pw_warehouse_s;100;notSpecified 
+ ;Y7326883;pw_warehouse_s;100;notSpecified 
+ ;Y7326884;pw_warehouse_s;100;notSpecified 
+ ;Y0129095;pw_warehouse_s;100;notSpecified 
+ ;Y0129089;pw_warehouse_s;100;notSpecified 
+ ;Y0129082;pw_warehouse_s;100;notSpecified 
+ ;Y0129083;pw_warehouse_s;100;notSpecified 
+ ;Y0129084;pw_warehouse_s;100;notSpecified 
+ ;Y0129085;pw_warehouse_s;100;notSpecified 
+ ;Y0129086;pw_warehouse_s;100;notSpecified 
+ ;Y0129073;pw_warehouse_s;100;notSpecified 
+ ;Y0129074;pw_warehouse_s;100;notSpecified 
+ ;Y0129075;pw_warehouse_s;100;notSpecified 
+ ;Y0129076;pw_warehouse_s;100;notSpecified 
+ ;Y0129077;pw_warehouse_s;100;notSpecified 
+ ;Y0129078;pw_warehouse_s;100;notSpecified 
+ ;Y0129079;pw_warehouse_s;100;notSpecified 
+ ;Y0129072;pw_warehouse_s;100;notSpecified 
+ ;Y0132110;pw_warehouse_s;100;notSpecified 
+ ;Y0132111;pw_warehouse_s;100;notSpecified 
+ ;Y0132112;pw_warehouse_s;100;notSpecified 
+ ;Y0132113;pw_warehouse_s;100;notSpecified 
+ ;Y0132114;pw_warehouse_s;100;notSpecified 
+ ;Y5520279;pw_warehouse_s;100;notSpecified 
+ ;Y5520277;pw_warehouse_s;100;notSpecified 
+ ;Y5520278;pw_warehouse_s;100;notSpecified 
+ ;Y5520275;pw_warehouse_s;100;notSpecified 
+ ;Y5520276;pw_warehouse_s;100;notSpecified 
+ ;Y5520274;pw_warehouse_s;100;notSpecified 
+ ;Y5520273;pw_warehouse_s;100;notSpecified 
+ ;Y5520518;pw_warehouse_s;100;notSpecified 
+ ;Y5520519;pw_warehouse_s;100;notSpecified 
+ ;Y5520516;pw_warehouse_s;100;notSpecified 
+ ;Y5520515;pw_warehouse_s;100;notSpecified 
+ ;Y5520434;pw_warehouse_s;100;notSpecified 
+ ;Y5520433;pw_warehouse_s;100;notSpecified 
+ ;Y5520430;pw_warehouse_s;100;notSpecified 
+ ;Y5520431;pw_warehouse_s;100;notSpecified 
+ ;Y5520427;pw_warehouse_s;100;notSpecified 
+ ;Y5520428;pw_warehouse_s;100;notSpecified 
+ ;Y5520435;pw_warehouse_s;100;notSpecified 
+ ;Y5520436;pw_warehouse_s;100;notSpecified 
+ ;Y5520437;pw_warehouse_s;100;notSpecified 
+ ;Y5520438;pw_warehouse_s;100;notSpecified 
+ ;Y5520473;pw_warehouse_s;100;notSpecified 
+ ;Y5520470;pw_warehouse_s;100;notSpecified 
+ ;Y5520472;pw_warehouse_s;100;notSpecified 
+ ;Y5520471;pw_warehouse_s;100;notSpecified 
+ ;Y5520474;pw_warehouse_s;100;notSpecified 
+ ;Y5520475;pw_warehouse_s;100;notSpecified 
+ ;Y5520476;pw_warehouse_s;100;notSpecified 
+ ;Y8576104;pw_warehouse_s;100;notSpecified 
+ ;Y8576105;pw_warehouse_s;100;notSpecified 
+ ;Y8576106;pw_warehouse_s;100;notSpecified 
+ ;Y8576107;pw_warehouse_s;100;notSpecified 
+ ;Y8576108;pw_warehouse_s;100;notSpecified 
+ ;Y8576109;pw_warehouse_s;100;notSpecified 
+ ;Y8576110;pw_warehouse_s;100;notSpecified 
+ ;Y8576103;pw_warehouse_s;100;notSpecified 
+ ;Y8576102;pw_warehouse_s;100;notSpecified 
+ ;Y8576101;pw_warehouse_s;100;notSpecified 
+ ;Y8576017;pw_warehouse_s;100;notSpecified 
+ ;Y8576010;pw_warehouse_s;100;notSpecified 
+ ;Y8576011;pw_warehouse_s;100;notSpecified 
+ ;Y8576012;pw_warehouse_s;100;notSpecified 
+ ;Y8576013;pw_warehouse_s;100;notSpecified 
+ ;Y8576014;pw_warehouse_s;100;notSpecified 
+ ;Y8576015;pw_warehouse_s;100;notSpecified 
+ ;Y8576018;pw_warehouse_s;100;notSpecified 
+ ;Y8576019;pw_warehouse_s;100;notSpecified 
+ ;Y8576020;pw_warehouse_s;100;notSpecified 
+ ;Y8576021;pw_warehouse_s;100;notSpecified 
+ ;Y8579012;pw_warehouse_s;100;notSpecified 
+ ;Y8579011;pw_warehouse_s;100;notSpecified 
+ ;Y8579010;pw_warehouse_s;100;notSpecified 
+ ;Y8579009;pw_warehouse_s;100;notSpecified 
+ ;Y8579008;pw_warehouse_s;100;notSpecified 
+ ;Y8579007;pw_warehouse_s;100;notSpecified 
+ ;Y8579006;pw_warehouse_s;100;notSpecified 
+ ;Y8579005;pw_warehouse_s;100;notSpecified 
+ ;Y8579004;pw_warehouse_s;100;notSpecified 
+ ;Y8579003;pw_warehouse_s;100;notSpecified 
+ ;Y8519058;pw_warehouse_s;100;notSpecified 
+ ;Y8519057;pw_warehouse_s;100;notSpecified 
+ ;Y8519073;pw_warehouse_s;100;notSpecified 
+ ;Y8519095;pw_warehouse_s;100;notSpecified 
+ ;Y8519097;pw_warehouse_s;100;notSpecified 
+ ;Y8506017;pw_warehouse_s;100;notSpecified 
+ ;Y8506032;pw_warehouse_s;100;notSpecified 
+ ;Y8506034;pw_warehouse_s;100;notSpecified 
+ ;Y8506036;pw_warehouse_s;100;notSpecified 
+ ;Y8506052;pw_warehouse_s;100;notSpecified 
+ ;Y8506053;pw_warehouse_s;100;notSpecified 
+ ;Y8506050;pw_warehouse_s;100;notSpecified 
+ ;Y8506051;pw_warehouse_s;100;notSpecified 
+ ;Y8509087;pw_warehouse_s;100;notSpecified 
+ ;Y8507095;pw_warehouse_s;100;notSpecified 
+ ;Y8507097;pw_warehouse_s;100;notSpecified 
+ ;Y8507121;pw_warehouse_s;100;notSpecified 
+ ;Y8507131;pw_warehouse_s;100;notSpecified 
+ ;Y8507135;pw_warehouse_s;100;notSpecified 
+ ;Y8512140;pw_warehouse_s;100;notSpecified 
+ ;Y8512144;pw_warehouse_s;100;notSpecified 
+ ;Y8512142;pw_warehouse_s;100;notSpecified 
+ ;Y8512006;pw_warehouse_s;100;notSpecified 
+ ;Y8512018;pw_warehouse_s;100;notSpecified 
+ ;Y8512025;pw_warehouse_s;100;notSpecified 
+ ;Y8512017;pw_warehouse_s;100;notSpecified 
+ ;Y8512032;pw_warehouse_s;100;notSpecified 
+ ;Y3221658;pw_warehouse_s;100;notSpecified 
+ ;Y3034627;pw_warehouse_s;100;notSpecified 
+ ;Y3224552;pw_warehouse_s;100;notSpecified 
+ ;Y3224551;pw_warehouse_s;100;notSpecified 
+ ;Y3034678;pw_warehouse_s;100;notSpecified 
+ ;Y3220781;pw_warehouse_s;100;notSpecified 
+ ;Y3220782;pw_warehouse_s;100;notSpecified 
+ ;Y3221672;pw_warehouse_s;100;notSpecified 
+ ;Y3221678;pw_warehouse_s;100;notSpecified 
+ ;Y3221688;pw_warehouse_s;100;notSpecified 
+ ;Y3207055;pw_warehouse_s;100;notSpecified 
+ ;Y3221659;pw_warehouse_s;100;notSpecified 
+ ;Y3220773;pw_warehouse_s;100;notSpecified 
+ ;Y3220831;pw_warehouse_s;100;notSpecified 
+ ;Y3222775;pw_warehouse_s;100;notSpecified 
+ ;Y3220830;pw_warehouse_s;100;notSpecified 
+ ;Y3220832;pw_warehouse_s;100;notSpecified 
+ ;Y3220783;pw_warehouse_s;100;notSpecified 
+ ;Y3220780;pw_warehouse_s;100;notSpecified 
+ ;Y3221641;pw_warehouse_s;100;notSpecified 
+ ;Y3220774;pw_warehouse_s;100;notSpecified 
+ ;Y3222776;pw_warehouse_s;100;notSpecified 
+ ;Y3221652;pw_warehouse_s;100;notSpecified 
+ ;Y0131053;pw_warehouse_s;100;notSpecified 
+ ;Y0131054;pw_warehouse_s;100;notSpecified 
+ ;Y0131055;pw_warehouse_s;100;notSpecified 
+
+
+INSERT_UPDATE Product;code[unique=true];stockLevels(productCode,warehouse(code));vendors(code)[default=powertools];$catalogVersion
+ ;Y7301558;Y7301558:pw_warehouse_s
+ ;Y7301559;Y7301559:pw_warehouse_s
+ ;Y7301560;Y7301560:pw_warehouse_s
+ ;Y7301561;Y7301561:pw_warehouse_s
+ ;Y7301562;Y7301562:pw_warehouse_s
+ ;Y7301563;Y7301563:pw_warehouse_s
+ ;Y7301564;Y7301564:pw_warehouse_s
+ ;Y7301565;Y7301565:pw_warehouse_s
+ ;Y7301566;Y7301566:pw_warehouse_s
+ ;Y5003115;Y5003115:pw_warehouse_s
+ ;Y5003116;Y5003116:pw_warehouse_s
+ ;Y7326252;Y7326252:pw_warehouse_s
+ ;Y7326917;Y7326917:pw_warehouse_s
+ ;Y7326918;Y7326918:pw_warehouse_s
+ ;Y7326912;Y7326912:pw_warehouse_s
+ ;Y7326919;Y7326919:pw_warehouse_s
+ ;Y7326920;Y7326920:pw_warehouse_s
+ ;Y7326921;Y7326921:pw_warehouse_s
+ ;Y7326922;Y7326922:pw_warehouse_s
+ ;Y7326923;Y7326923:pw_warehouse_s
+ ;Y7326924;Y7326924:pw_warehouse_s
+ ;Y7326925;Y7326925:pw_warehouse_s
+ ;Y7326926;Y7326926:pw_warehouse_s
+ ;Y7326927;Y7326927:pw_warehouse_s
+ ;Y7326928;Y7326928:pw_warehouse_s
+ ;Y7326929;Y7326929:pw_warehouse_s
+ ;Y7326914;Y7326914:pw_warehouse_s
+ ;Y7326915;Y7326915:pw_warehouse_s
+ ;Y7326930;Y7326930:pw_warehouse_s
+ ;Y7326931;Y7326931:pw_warehouse_s
+ ;Y7326932;Y7326932:pw_warehouse_s
+ ;Y7326933;Y7326933:pw_warehouse_s
+ ;Y7326934;Y7326934:pw_warehouse_s
+ ;Y7326935;Y7326935:pw_warehouse_s
+ ;Y7326936;Y7326936:pw_warehouse_s
+ ;Y7326937;Y7326937:pw_warehouse_s
+ ;Y7326938;Y7326938:pw_warehouse_s
+ ;Y7326939;Y7326939:pw_warehouse_s
+ ;Y7326940;Y7326940:pw_warehouse_s
+ ;Y7326062;Y7326062:pw_warehouse_s
+ ;Y7326063;Y7326063:pw_warehouse_s
+ ;Y7326870;Y7326870:pw_warehouse_s
+ ;Y7326880;Y7326880:pw_warehouse_s
+ ;Y7326881;Y7326881:pw_warehouse_s
+ ;Y7326882;Y7326882:pw_warehouse_s
+ ;Y7326883;Y7326883:pw_warehouse_s
+ ;Y7326884;Y7326884:pw_warehouse_s
+ ;Y0129095;Y0129095:pw_warehouse_s
+ ;Y0129089;Y0129089:pw_warehouse_s
+ ;Y0129082;Y0129082:pw_warehouse_s
+ ;Y0129083;Y0129083:pw_warehouse_s
+ ;Y0129084;Y0129084:pw_warehouse_s
+ ;Y0129085;Y0129085:pw_warehouse_s
+ ;Y0129086;Y0129086:pw_warehouse_s
+ ;Y0129073;Y0129073:pw_warehouse_s
+ ;Y0129074;Y0129074:pw_warehouse_s
+ ;Y0129075;Y0129075:pw_warehouse_s
+ ;Y0129076;Y0129076:pw_warehouse_s
+ ;Y0129077;Y0129077:pw_warehouse_s
+ ;Y0129078;Y0129078:pw_warehouse_s
+ ;Y0129079;Y0129079:pw_warehouse_s
+ ;Y0129072;Y0129072:pw_warehouse_s
+ ;Y0132110;Y0132110:pw_warehouse_s
+ ;Y0132111;Y0132111:pw_warehouse_s
+ ;Y0132112;Y0132112:pw_warehouse_s
+ ;Y0132113;Y0132113:pw_warehouse_s
+ ;Y0132114;Y0132114:pw_warehouse_s
+ ;Y5520279;Y5520279:pw_warehouse_s
+ ;Y5520277;Y5520277:pw_warehouse_s
+ ;Y5520278;Y5520278:pw_warehouse_s
+ ;Y5520275;Y5520275:pw_warehouse_s
+ ;Y5520276;Y5520276:pw_warehouse_s
+ ;Y5520274;Y5520274:pw_warehouse_s
+ ;Y5520273;Y5520273:pw_warehouse_s
+ ;Y5520518;Y5520518:pw_warehouse_s
+ ;Y5520519;Y5520519:pw_warehouse_s
+ ;Y5520516;Y5520516:pw_warehouse_s
+ ;Y5520515;Y5520515:pw_warehouse_s
+ ;Y5520434;Y5520434:pw_warehouse_s
+ ;Y5520433;Y5520433:pw_warehouse_s
+ ;Y5520430;Y5520430:pw_warehouse_s
+ ;Y5520431;Y5520431:pw_warehouse_s
+ ;Y5520427;Y5520427:pw_warehouse_s
+ ;Y5520428;Y5520428:pw_warehouse_s
+ ;Y5520435;Y5520435:pw_warehouse_s
+ ;Y5520436;Y5520436:pw_warehouse_s
+ ;Y5520437;Y5520437:pw_warehouse_s
+ ;Y5520438;Y5520438:pw_warehouse_s
+ ;Y5520473;Y5520473:pw_warehouse_s
+ ;Y5520470;Y5520470:pw_warehouse_s
+ ;Y5520472;Y5520472:pw_warehouse_s
+ ;Y5520471;Y5520471:pw_warehouse_s
+ ;Y5520474;Y5520474:pw_warehouse_s
+ ;Y5520475;Y5520475:pw_warehouse_s
+ ;Y5520476;Y5520476:pw_warehouse_s
+ ;Y8576104;Y8576104:pw_warehouse_s
+ ;Y8576105;Y8576105:pw_warehouse_s
+ ;Y8576106;Y8576106:pw_warehouse_s
+ ;Y8576107;Y8576107:pw_warehouse_s
+ ;Y8576108;Y8576108:pw_warehouse_s
+ ;Y8576109;Y8576109:pw_warehouse_s
+ ;Y8576110;Y8576110:pw_warehouse_s
+ ;Y8576103;Y8576103:pw_warehouse_s
+ ;Y8576102;Y8576102:pw_warehouse_s
+ ;Y8576101;Y8576101:pw_warehouse_s
+ ;Y8576017;Y8576017:pw_warehouse_s
+ ;Y8576010;Y8576010:pw_warehouse_s
+ ;Y8576011;Y8576011:pw_warehouse_s
+ ;Y8576012;Y8576012:pw_warehouse_s
+ ;Y8576013;Y8576013:pw_warehouse_s
+ ;Y8576014;Y8576014:pw_warehouse_s
+ ;Y8576015;Y8576015:pw_warehouse_s
+ ;Y8576018;Y8576018:pw_warehouse_s
+ ;Y8576019;Y8576019:pw_warehouse_s
+ ;Y8576020;Y8576020:pw_warehouse_s
+ ;Y8576021;Y8576021:pw_warehouse_s
+ ;Y8579012;Y8579012:pw_warehouse_s
+ ;Y8579011;Y8579011:pw_warehouse_s
+ ;Y8579010;Y8579010:pw_warehouse_s
+ ;Y8579009;Y8579009:pw_warehouse_s
+ ;Y8579008;Y8579008:pw_warehouse_s
+ ;Y8579007;Y8579007:pw_warehouse_s
+ ;Y8579006;Y8579006:pw_warehouse_s
+ ;Y8579005;Y8579005:pw_warehouse_s
+ ;Y8579004;Y8579004:pw_warehouse_s
+ ;Y8579003;Y8579003:pw_warehouse_s
+ ;Y8519058;Y8519058:pw_warehouse_s
+ ;Y8519057;Y8519057:pw_warehouse_s
+ ;Y8519073;Y8519073:pw_warehouse_s
+ ;Y8519095;Y8519095:pw_warehouse_s
+ ;Y8519097;Y8519097:pw_warehouse_s
+ ;Y8506017;Y8506017:pw_warehouse_s
+ ;Y8506032;Y8506032:pw_warehouse_s
+ ;Y8506034;Y8506034:pw_warehouse_s
+ ;Y8506036;Y8506036:pw_warehouse_s
+ ;Y8506052;Y8506052:pw_warehouse_s
+ ;Y8506053;Y8506053:pw_warehouse_s
+ ;Y8506050;Y8506050:pw_warehouse_s
+ ;Y8506051;Y8506051:pw_warehouse_s
+ ;Y8509087;Y8509087:pw_warehouse_s
+ ;Y8507095;Y8507095:pw_warehouse_s
+ ;Y8507097;Y8507097:pw_warehouse_s
+ ;Y8507121;Y8507121:pw_warehouse_s
+ ;Y8507131;Y8507131:pw_warehouse_s
+ ;Y8507135;Y8507135:pw_warehouse_s
+ ;Y8512140;Y8512140:pw_warehouse_s
+ ;Y8512144;Y8512144:pw_warehouse_s
+ ;Y8512142;Y8512142:pw_warehouse_s
+ ;Y8512006;Y8512006:pw_warehouse_s
+ ;Y8512018;Y8512018:pw_warehouse_s
+ ;Y8512025;Y8512025:pw_warehouse_s
+ ;Y8512017;Y8512017:pw_warehouse_s
+ ;Y8512032;Y8512032:pw_warehouse_s
+ ;Y3221658;Y3221658:pw_warehouse_s
+ ;Y3034627;Y3034627:pw_warehouse_s
+ ;Y3224552;Y3224552:pw_warehouse_s
+ ;Y3224551;Y3224551:pw_warehouse_s
+ ;Y3034678;Y3034678:pw_warehouse_s
+ ;Y3220781;Y3220781:pw_warehouse_s
+ ;Y3220782;Y3220782:pw_warehouse_s
+ ;Y3221672;Y3221672:pw_warehouse_s
+ ;Y3221678;Y3221678:pw_warehouse_s
+ ;Y3221688;Y3221688:pw_warehouse_s
+ ;Y3207055;Y3207055:pw_warehouse_s
+ ;Y3221659;Y3221659:pw_warehouse_s
+ ;Y3220773;Y3220773:pw_warehouse_s
+ ;Y3220831;Y3220831:pw_warehouse_s
+ ;Y3222775;Y3222775:pw_warehouse_s
+ ;Y3220830;Y3220830:pw_warehouse_s
+ ;Y3220832;Y3220832:pw_warehouse_s
+ ;Y3220783;Y3220783:pw_warehouse_s
+ ;Y3220780;Y3220780:pw_warehouse_s
+ ;Y3221641;Y3221641:pw_warehouse_s
+ ;Y3220774;Y3220774:pw_warehouse_s
+ ;Y3222776;Y3222776:pw_warehouse_s
+ ;Y3221652;Y3221652:pw_warehouse_s
+ ;Y0131053;Y0131053:pw_warehouse_s
+ ;Y0131054;Y0131054:pw_warehouse_s
+ ;Y0131055;Y0131055:pw_warehouse_s
+
+################# Start of Shop by Mcafee ################################
+
+INSERT_UPDATE StockLevel;productCode[unique=true];warehouse(code)[unique=true,default=default];available;inStockStatus(code);maxPreOrder[default=1];maxStockLevelHistoryCount[default=-1];overSelling[default=0];preOrder[default=0];reserved[default=0]
+;M111111;pw_warehouse_s;2000;forceInStock
+;M111112;pw_warehouse_s;2000;forceInStock
+;M111113;pw_warehouse_s;2000;forceInStock
+;M111114;pw_warehouse_s;2000;forceInStock
+;M111115;pw_warehouse_s;2000;forceInStock
+
+INSERT_UPDATE Product;code[unique=true];stockLevels(productCode,warehouse(code));vendors(code)[default=powertools];$catalogVersion
+;M111111;M111111:pw_warehouse_s
+;M111112;M111112:pw_warehouse_s
+;M111113;M111113:pw_warehouse_s
+;M111114;M111114:pw_warehouse_s
+;M111115;M111115:pw_warehouse_s
+
+################# End of Shop by Mcafee ################################
