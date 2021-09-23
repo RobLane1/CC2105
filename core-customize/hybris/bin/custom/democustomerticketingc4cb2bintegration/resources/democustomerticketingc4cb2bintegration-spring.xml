@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ [y] hybris Platform
+  ~ 
+  ~ Copyright (c) 2000-2016 SAP SE
+  ~ All rights reserved.
+  ~ 
+  ~ This software is the confidential and proprietary information of SAP 
+  ~ Hybris ("Confidential Information"). You shall not disclose such 
+  ~ Confidential Information and shall use it only in accordance with the 
+  ~ terms of the license agreement you entered into with SAP Hybris.
+  -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop.xsd">
+           
+    <bean id="democustomerticketingc4cb2bintegrationSystemSetup" class="de.hybris.platform.democustomerticketingc4cb2bintegration.setup.Democustomerticketingc4cb2bintegrationSystemSetup">
+        <!-- constructor arg injection example -->
+        <constructor-arg ref="democustomerticketingc4cb2bintegrationService"/>
+    </bean>
+
+    <bean id="democustomerticketingc4cb2bintegrationService" class="de.hybris.platform.democustomerticketingc4cb2bintegration.service.impl.DefaultDemocustomerticketingc4cb2bintegrationService">
+        <!-- setter injection example -->
+        <property name="modelService" ref="modelService"/>
+        <property name="mediaService" ref="mediaService"/>
+        <property name="flexibleSearchService" ref="flexibleSearchService"/>
+    </bean>
+		
+	<bean id="demoDefaultc4cB2BTicketPopulator"
+		class="de.hybris.platform.democustomerticketingc4cb2bintegration.converters.populators.DemoY2C4CB2BTicketPopulator" />
+
+	<bean id="demoC4cTicketData" class="de.hybris.platform.customerticketingc4cintegration.data.DemoServiceRequestData" scope="prototype"/>
+    <bean id="demoDefaultC4CTicketConverter" parent="abstractPopulatingConverter" >
+        <lookup-method name="createTarget" bean="demoC4cTicketData"/>
+        <property name="populators">
+            <list>
+                <ref bean="demoDefaultc4cB2BTicketPopulator"/>
+            </list>
+        </property>
+    </bean>
+    
+	<bean id="demoC4cBaseFacade" class="de.hybris.platform.democustomerticketingc4cb2bintegration.facade.DemoC4CBaseFacade"/>
+	
+	<alias alias="c4cTicketFacadeImpl" name="demoC4CTicketFacadeImpl"/>
+	<bean id="demoC4CTicketFacadeImpl" class="de.hybris.platform.democustomerticketingc4cb2bintegration.facade.DemoC4CTicketFacadeImpl" >
+    	<property name="restTemplate" ref="ticketingRestTemplate"/>
+        <property name="ticketConverter" ref="defaultTicketConverter"/>
+        <property name="defaultC4CTicketConverter" ref="defaultC4CTicketConverter"/>
+        <property name="demoTicketConverter" ref="demoDefaultTicketConverter"/>
+        <property name="newTicketConverter" ref="newDefaultTicketConverter"/>
+		<property name="demoDefaultC4CTicketConverter" ref="demoDefaultC4CTicketConverter"/>
+        <property name="updateMessageConverter" ref="updateMessageConverter"/>
+        <property name="jacksonObjectMapper" ref="jacksonObjectMapper"/>
+        <property name="jacksonObjectMapperForCreate" ref="jacksonObjectMapperForCreate"/>
+        <property name="c4cIntegrationService" ref="democustomerticketingc4cb2bintegrationService"/>
+		<property name="userService" ref="userService"/>
+		<property name="c4cBaseFacade" ref="demoC4cBaseFacade" />        
+        <property name="sitePropsHolder" ref="sitePropsHolder" />
+        <property name="customerFacade" ref="customerFacade" />
+        <property name="completedStatus" ref="ticket_completed" />
+        <property name="httpHeaderUtil" ref="defaultC4CHttpHeaderUtil" />
+    </bean>
+    
+	<bean id="jacksonObjectMapperForCreate" class="com.fasterxml.jackson.databind.ObjectMapper" >
+        <property name="serializationInclusion" value="NON_NULL"/>
+        <property name="propertyNamingStrategy" ref="demoODataCaseStrategy"/>
+    </bean>
+    <bean id="demoODataCaseStrategy" class="de.hybris.platform.democustomerticketingc4cb2bintegration.converter.DemoODataCaseStrategy"/>
+	
+	<bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+        <property name="targetObject" ref="jacksonObjectMapperForCreate" />
+        <property name="targetMethod" value="configure" />
+        <property name="arguments">
+            <list>
+                <value type="com.fasterxml.jackson.databind.DeserializationFeature">ACCEPT_SINGLE_VALUE_AS_ARRAY</value>
+                <value>true</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+        <property name="targetObject" ref="jacksonObjectMapperForCreate" />
+        <property name="targetMethod" value="configure" />
+        <property name="arguments">
+            <list>
+                <value type="com.fasterxml.jackson.databind.DeserializationFeature">FAIL_ON_UNKNOWN_PROPERTIES</value>
+                <value>false</value>
+            </list>
+        </property>
+    </bean>
+
+	
+	<bean id="demoTicketPopulator" class="de.hybris.platform.democustomerticketingc4cb2bintegration.converters.populators.DemoC4C2YTicketPopulator" />
+    <bean id="ticketData" class="de.hybris.platform.customerticketingfacades.data.TicketData" scope="prototype"/>
+    <bean id="demoDefaultTicketConverter" parent="abstractPopulatingConverter" >
+        <lookup-method name="createTarget" bean="ticketData"/>
+        <property name="populators">
+            <list>
+                <ref bean="demoTicketPopulator"/>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="newTicketPopulator" class="de.hybris.platform.democustomerticketingc4cb2bintegration.converters.populators.NewC4C2YTicketPopulator" />
+    <bean id="newDefaultTicketConverter" parent="abstractPopulatingConverter" >
+        <lookup-method name="createTarget" bean="ticketData"/>
+        <property name="populators">
+            <list>
+                <ref bean="newTicketPopulator"/>
+            </list>
+        </property>
+    </bean>
+</beans>
