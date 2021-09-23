@@ -233,7 +233,6 @@
 	<extension name="consignmenttrackingbackoffice" />
 
 	<extension name='b2boccaddon' />
-	<extension name='customerticketingc4cb2bintegration' />
 	<extension name="consignmenttrackingservices"/>
 	<extension name='cms2lib' />
 	<extension name='acceleratorwebservicesaddon' />
