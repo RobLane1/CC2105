@@ -75,8 +75,10 @@
     <extension name='oauth2' />
      
     <extension name='b2boccaddon' />-->
+	<extension name='b2bocc' />
 	<extension name='addonsupport' />
 	<extension name='adaptivesearchsamplesaddon' />
+	<extension name='cmsocc' />
 	<extension name='cmsoccaddon' />
 	<extension name='consignmenttrackingoccaddon' />
 	<!--<extension name='customerinterestsoccaddon' />
@@ -114,6 +116,7 @@
     <extension name='yacceleratorstorefront' />
 	<extension name='apparelstore' />
     <extension name='electronicsstore' />
+	
 <!-- If you want to test Cloud Hot Folders locally download the extensions from https://launchpad.support.sap.com/#/notes/2817992 and uncomment the following -->
     <!--<extension name='azurecloudhotfolder' />
     <extension name='cloudcommons' />
