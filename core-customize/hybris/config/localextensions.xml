@@ -39,8 +39,8 @@
     <extension name='previewwebservices' />
     <extension name='cmssmarteditwebservices' />
     <extension name='secureportaladdon' />
-	<extension name="datahubadapter" />
-    <extension name='datahubbackoffice' />
+	<!--<extension name="datahubadapter" />
+    <extension name='datahubbackoffice' />-->
     <extension name='commerceservicesbackoffice' />
     <extension name='warehousing' />
     <extension name='b2bapprovalprocess' />
@@ -69,19 +69,20 @@
     <extension name='sapcoretest' />
 	
 	<!--  below are settings for OCC -->
-	<extension name='ycommercewebservices' />
-	 <!-- <extension name='democommercewebservices' />  -->
+	<extension name='commercewebservices' />
+	<extension name='commercewebservicescommons' />
+	 <!-- <extension name='democommercewebservices' />  
     <extension name='oauth2' />
      
-    <extension name='b2boccaddon' />
+    <extension name='b2boccaddon' />-->
 	<extension name='addonsupport' />
 	<extension name='adaptivesearchsamplesaddon' />
 	<extension name='cmsoccaddon' />
 	<extension name='consignmenttrackingoccaddon' />
 	<!--<extension name='customerinterestsoccaddon' />
 	<extension name='notificationoccaddon' />	-->	
-	<!-- below settings are for C4C -->
 	
+	<!-- below settings are for C4C -->
 	<extension name="c4ccustomer" />
 	<!-- <extension name="assistedserviceatddtests" /> -->
 	<!-- <extension name="c4ccustomeratddtests" /> -->
