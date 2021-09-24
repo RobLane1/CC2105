@@ -58,7 +58,7 @@
     <extension name='saporderexchangeb2b' />
     <extension name='saporderexchangebackoffice' />
     <extension name='sapcommonbol' />
-    <extension name='sapordermgmtb2bfacades' />
+    <!--<extension name='sapordermgmtb2bfacades' />-->
     <extension name='sapordermgmtbol' />
     <extension name='ysapordermgmtb2baddon' />
     <extension name='sapordermgmtbackoffice' />
@@ -75,6 +75,7 @@
     <extension name='oauth2' />
      
     <extension name='b2boccaddon' />-->
+	<extension name='b2bocc' />
 	<extension name='addonsupport' />
 	<extension name='adaptivesearchsamplesaddon' />
 	<extension name='cmsocc' />
