@@ -86,7 +86,3 @@ beans.xsd
 items.xsd
 classes/
 eclipsebin/
-
-
-# backup files
-*.bak

@@ -1,2 +1,0 @@
-## messageSource=classpath:/sapphireinitialdata/messages/email-replenishmentOrderPlacedSubject_$lang.properties
-${ctx.messages.emailSubject}

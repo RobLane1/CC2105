@@ -1,12 +1,6 @@
 {
     "commerceSuiteVersion": "2105",
     "enableImageProcessingService": true,
-    "extensionPacks" : [
-	{
-		"name" : "hybris-commerce-integrations",
-		"version" : "2102.0"
-	}
-     ],
     "extensions": [
         "cloudmediaconversion",  
         "mediaconversionbackoffice"
@@ -38,8 +32,13 @@
 		"smarteditaddon",
             	"textfieldconfiguratortemplateaddon",
             	"assistedservicestorefront",
+        	"assistedservicepromotionaddon",
+            	"customerticketingaddon",
          	"orderselfserviceaddon",
-         	"adaptivesearchsamplesaddon"
+         	"adaptivesearchsamplesaddon",
+         	"multicountrysampledataaddon",
+         	"pcmbackofficesamplesaddon",
+         	"personalizationaddon"
          ],
 	"storefronts": [
                 "yacceleratorstorefront",
@@ -49,16 +48,12 @@
         },
 	{
             "addons": [
-	    	"acceleratorwebservicesaddon",
-	    	"sapcoreaddon",
-	    	"sapphirecustomerticketaddon",
-	    	"sapphiredemoaddon",
-	    	"consignmenttrackingaddon",
-	    	"mockcarrieraddon",
-	    	"ysapordermgmtb2baddon",
+                "accountsummaryaddon",
                 "b2bacceleratoraddon",
+                "b2bpunchoutaddon",
                 "commerceorgaddon",
                 "commerceorgsamplesaddon",
+                "sapproductconfigb2baddon",
                 "secureportaladdon"
             ],
             "storefront": "yb2bacceleratorstorefront",
