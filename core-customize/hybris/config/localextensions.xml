@@ -261,7 +261,7 @@
 
 	<!-- SAP Asynchronous Order Management-->
 	<extension name= 'saporderexchangebackoffice' />
-	<extension name= 'ysapcpiomsfulfillment' />
+	<extension name= 'ysaporderfulfillment' />
 	<!--<extension name= 'saporderexchangeoms' />
 	<extension name= 'saporderexchangeomsb2b' />-->
 	
