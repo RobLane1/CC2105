@@ -242,8 +242,8 @@
 	<!-- scpi-order-management-system -->
 	<extension name= 'sapcpiorderexchangeoms' />
 	<extension name= 'sapcpiorderexchangeomsb2b' />
-	<!--<extension name= 'ysapcpiomsfulfillment' />
-	<extension name= 'scpiconnectorbackoffice' />-->
+	<extension name= 'ysapcpiomsfulfillment' />
+	<!--<extension name= 'scpiconnectorbackoffice' />-->
 	
 	<!-- SAP Core Extensions -->
 	<extension name= 'sapcore' />
@@ -261,7 +261,7 @@
 
 	<!-- SAP Asynchronous Order Management-->
 	<extension name= 'saporderexchangebackoffice' />
-	<extension name= 'ysaporderfulfillment' />
+	<extension name= 'ysapomsfulfillment' />
 	<!--<extension name= 'saporderexchangeoms' />
 	<extension name= 'saporderexchangeomsb2b' />-->
 	
