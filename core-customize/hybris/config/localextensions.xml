@@ -261,9 +261,9 @@
 
 	<!-- SAP Asynchronous Order Management-->
 	<extension name= 'saporderexchangebackoffice' />
-	<!--<extension name= 'ysapomsfulfillment' />
+	<!--<extension name= 'ysapomsfulfillment' />-->
 	<extension name= 'saporderexchangeoms' />
-	<extension name= 'saporderexchangeomsb2b' />-->
+	<extension name= 'saporderexchangeomsb2b' />
 	
 	<!-- SAP Return Order Management-->
 	<extension name= 'ysaperpreturnprocess' />
