@@ -55,12 +55,7 @@
     <extension name='backofficesolrsearch' />
     <extension name='platformbackoffice' />
     <extension name='ybackoffice' />
-    <!--<extension name='yacceleratorbackoffice' />-->
-    <extension name='yacceleratorbackoffice' />
-    <extension name='yacceleratorcore' />
-    <extension name='yacceleratorfacades' />
-    <extension name='yacceleratorinitialdata' />
-    <extension name='yacceleratorstorefront' />
+   
     <extension name='yaddon' />
     <extension name='basecommerce' />
     <extension name='basecommercebackoffice' />
@@ -135,7 +130,7 @@
     <extension name='warehousingbackoffice' />
     <extension name='warehousingfacades' />
     <extension name='warehousingwebservices' />
-    <extension name='yacceleratorordermanagement' />
+    
     <extension name='personalizationcms' />
     <extension name='personalizationcmsbackoffice' />
     <extension name='personalizationcmsweb' />
@@ -293,6 +288,16 @@
 	<extension name= 'sapserviceorderocctests' />
 	<extension name= 'sapbillinginvoiceocc' />
 	<extension name= 'sapbillinginvoiceocctests' />
+	
+	<extension dir="${HYBRIS_BIN_DIR}/custom/myproject/myprojectbackoffice"/>
+	<extension dir="${HYBRIS_BIN_DIR}/custom/myproject/myprojectcore"/>
+	<extension dir="${HYBRIS_BIN_DIR}/custom/myproject/myprojectfacades"/>
+	<extension dir="${HYBRIS_BIN_DIR}/custom/myproject/myprojectfulfilmentprocess"/>
+	<extension dir="${HYBRIS_BIN_DIR}/custom/myproject/myprojectinitialdata"/>
+	<extension dir="${HYBRIS_BIN_DIR}/custom/myproject/myprojectstorefront"/>
+	<extension dir="${HYBRIS_BIN_DIR}/custom/myproject/myprojecttest"/>
+	
+	<extension dir="${HYBRIS_BIN_DIR}/custom/myprojectb2bstorefront"/>  
 	  
 <!-- If you want to test Cloud Hot Folders locally download the extensions from https://launchpad.support.sap.com/#/notes/2817992 and uncomment the following -->
     <!--<extension name='azurecloudhotfolder' />
