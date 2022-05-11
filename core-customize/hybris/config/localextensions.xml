@@ -222,6 +222,8 @@
     <extension name='webservicescommons' />
     <extension name='ywebservices' />
 	<extension name= 'sapproductconfigb2baddon' />
+	<extension name='promotions' />
+    <extension name='promotionsbackoffice' />
 
 <!-- Sample Extensions -->
     <extension name='spartacussampledata' />
